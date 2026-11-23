@@ -1,5 +1,4 @@
 import pygame
-from pygame import K_DOWN
 
 import render
 #import player
@@ -32,8 +31,7 @@ class Main:
 
 if __name__ == "__main__":
     pygame.init()
-    pygame.display.set_caption("Healthy-Animals")
+    pygame.display.set_caption("Healthy Animals")
     game = Main()
     jeu_render = render.Render()
     game.run()
-
