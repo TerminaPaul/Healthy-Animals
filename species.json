@@ -1,0 +1,8 @@
+{
+  "dog": {
+    "species": "Dog"
+  },
+  "cat": {
+    "species": "Cat"
+  }
+}
