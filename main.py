@@ -1,13 +1,13 @@
 import pygame
 
 import render
-#import player
+import player
 
 
 class Main:
     def __init__(self):
         self.running = True
-        #self.player = player.Player
+        self.player = player.Player
 
     def event(self):
         for event in pygame.event.get():

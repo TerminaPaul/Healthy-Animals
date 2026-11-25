@@ -1,22 +1,24 @@
 import json
-
-
-def species_json(animal):
-    with open("species.json") as species:
-        if species not in (json.loads(species.read()).keys()):
-            species = "dog"
-        return json.loads(species.read())[animal]
+import os
 
 
 class Animal:
     def __init__(self, species: str, name: str, sex: str = "Male" or "Female"):
         assert str(sex) in ("Male", "Female"), f"sex must be 'Male' or 'Female' not: {str(sex)}"
-        animal = species_json(species.lower())
+        animal = Animal.load_animal(species.lower())
         self.__id = id(animal)
         self.__species = animal["species"]
         self.name = str(name)
         self.__sex = str(sex)
         self.__decease = []
+
+    @staticmethod
+    def load_animal(animal):
+        with open(os.sep.join(["data", "species.json"])) as species:
+            species = species.read()
+            if animal not in (json.loads(species).keys()):
+                animal = 'dog'
+            return json.loads(species)[animal]
 
 
 if __name__ == '__main__':
